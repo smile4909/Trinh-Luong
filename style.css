@@ -1342,10 +1342,10 @@ body {
   background: #fdf6ef;
   background: linear-gradient(160deg, #fff8f4 0%, #fdf6ef 100%);
   border-radius: 24px;
-  padding: 36px 28px;
+  padding: 36px 28px 48px;
   max-width: 380px;
   width: 90%;
-  max-height: 85vh;
+  max-height: 90vh;
   overflow-y: auto;
   text-align: center;
   box-shadow: 0 40px 100px rgba(0,0,0,0.5);
@@ -1449,12 +1449,23 @@ body {
 .gift-qr img {
   display: block;
   margin: 0 auto;
-  width: 270px;
-  height: 270px;
+  width: 100%;
+  max-width: 270px;
+  height: auto;
   object-fit: contain;
   border-radius: 12px;
   border: 2px solid var(--gold-light);
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 480px) {
+  .gift-modal-inner {
+    padding: 32px 20px 48px;
+    max-height: 85vh;
+  }
+  .gift-qr img {
+    max-width: 220px;
+  }
 }
 
 .gift-qr-caption {
