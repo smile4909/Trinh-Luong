@@ -1371,8 +1371,6 @@ body {
   margin-bottom: 16px;
 }
 
-.gift-modal-icon { font-size: 3rem; }
-
 .gift-modal-header h3 {
   font-family: var(--font-disp);
   font-size: 1.6rem;
