@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiệp Cưới | Ngọc Lượng & Kiều Trinh</title>
+  <meta name="description" content="Trân trọng kính mời bạn đến dự lễ thành hôn của Ngọc Lượng & Kiều Trinh" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&family=Great+Vibes&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+
+<body>
+  <!-- ===== GLOBAL TEXTURE OVERLAY ===== -->
+  <div class="texture-overlay"></div>
+
+  <!-- Gift Modal Overlay (Top Level) -->
+  <div class="gift-modal-overlay" id="gift-modal" onclick="closeGiftBox()">
+    <div class="gift-modal-inner" onclick="event.stopPropagation()">
+      <div class="gift-modal-header">
+        <span class="gift-modal-icon">🎁</span>
+        <h3>Cô Dâu - Kiều Trinh</h3>
+      </div>
+      <div class="gift-qr">
+        <img src="qr-bank.jpg" alt="QR chuyển khoản" />
+        <p class="gift-qr-caption">Quét QR để chuyển khoản</p>
+      </div>
+      <p class="gift-modal-thanks">❤️ Cảm ơn tình cảm của quý khách ❤️</p>
+      <button class="gift-modal-close" onclick="closeGiftBox()">Đóng lại</button>
+    </div>
+  </div>
+
+  <!-- ===== PETALS CANVAS ===== -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- ===== DOOR INTRO ===== -->
+  <div id="door-wrapper">
+    <div class="door-inner">
+      <div class="door door-left" onclick="openDoors()">
+        <div class="hy-container">
+          <div class="motif dragon-motif"></div>
+          <div class="hy-char">囍</div>
+        </div>
+        <div class="wax-seal">
+          <span class="seal-text">L &amp; T</span>
+        </div>
+      </div>
+      <div class="door door-right" onclick="openDoors()">
+        <div class="hy-container">
+          <div class="motif phoenix-motif"></div>
+          <div class="hy-char">囍</div>
+        </div>
+      </div>
+    </div>
+    <p class="door-hint">— Nhấn để mở thiệp —</p>
+  </div>
+
+  <!-- ===== MAIN INVITATION ===== -->
+  <main id="invitation" class="hidden">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-floral top"></div>
+      <div class="hero-content">
+        <p class="hero-subtitle fade-up">Thư Mời Cưới</p>
+        <h1 class="hero-names fade-up delay-1">
+          <span class="name">Ngọc Lượng</span>
+          <span class="amp">&amp;</span>
+          <span class="name">Kiều Trinh</span>
+        </h1>
+        <p class="hero-tagline fade-up delay-2">cùng gia đình trân trọng kính mời Quý khách đến dự lễ thành hôn</p>
+        <div class="divider fade-up delay-3">
+          <span class="line"></span>
+          <span class="heart">♥</span>
+          <span class="line"></span>
+        </div>
+        <div class="hero-date fade-up delay-4">
+          <div class="date-block">
+            <span class="date-num">22</span>
+            <span class="date-label">Ngày</span>
+          </div>
+          <div class="date-sep">·</div>
+          <div class="date-block">
+            <span class="date-num">03</span>
+            <span class="date-label">Tháng</span>
+          </div>
+          <div class="date-sep">·</div>
+          <div class="date-block">
+            <span class="date-num">2026</span>
+            <span class="date-label">Năm</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-floral bottom"></div>
+      <div class="hero-couple-img">
+        <img src="images/AHG_7068.jpg" alt="Cặp đôi" />
+      </div>
+    </section>
+
+    <!-- FAMILY / INVITATION TEXT -->
+    <section class="family-section" id="family-section">
+      <div class="family-container">
+        <div class="family-title-col fade-right">
+          <div class="vertical-line"></div>
+          <h2 class="family-title">Thư<br>Mời<br>Cưới</h2>
+        </div>
+        
+        <div class="family-details-col fade-left delay-1">
+          <div class="family-group">
+            <h3 class="family-side">NHÀ TRAI</h3>
+            <p class="family-parent">Ông <span class="parent-name">Nguyễn Văn Tụ</span></p>
+            <p class="family-parent">Bà <span class="parent-name">Khuất Thị Vỹ</span></p>
+          </div>
+          
+          <div class="family-group mt-ab">
+            <h3 class="family-side">NHÀ GÁI</h3>
+            <p class="family-parent">Ông <span class="parent-name">Nguyễn Quốc Trị</span></p>
+            <p class="family-parent">Bà <span class="parent-name">Võ Thị Hưởng</span></p>
+          </div>
+        </div>
+
+        <div class="family-decor fade-left delay-2">
+          <div class="bookmark">
+            <div class="bookmark-hole"></div>
+            <div class="hy-char-small">囍</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section" id="countdown-section">
+      <p class="section-sub">Đếm ngược đến ngày trọng đại</p>
+      <div class="countdown" id="countdown">
+        <div class="cd-box"><span class="cd-num" id="cd-days">00</span><span class="cd-label">Ngày</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Giờ</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">Phút</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Giây</span></div>
+      </div>
+    </section>
+
+
+
+    <!-- EVENT DETAILS -->
+    <section class="event-section" id="event">
+      <div class="event-bg-new"></div>
+      <div class="event-content-new">
+        <div class="event-group-new fade-up">
+          <h2 class="event-title-new">LỄ VU QUY</h2>
+          <p class="event-day-new">CHỦ NHẬT | 9H00</p>
+          <div class="event-date-large-new">2 2 . 0 3 . 2 0 2 6</div>
+          <p class="event-lunar-new">(Nhằm Ngày 04 Tháng 02 Năm Bính Ngọ)</p>
+          <p class="event-location-new">Tại Tư Gia Nhà Gái</p>
+        </div>
+
+        <div class="event-divider-new fade-up"></div>
+
+        <div class="event-group-new fade-up delay-1">
+          <h2 class="event-title-new">BỮA CƠM THÂN MẬT</h2>
+          <p class="event-time-alt-new">Vào Lúc 11h00 | Chủ Nhật</p>
+          <div class="event-date-row-new">
+            <span class="date-part-new">22</span>
+            <span class="date-sep-new">|</span>
+            <span class="date-month-new">Tháng 3</span>
+            <span class="date-sep-new">|</span>
+            <span class="date-year-new">2026</span>
+          </div>
+          <p class="event-lunar-new">(Nhằm Ngày 04 Tháng 02 Năm Bính Ngọ)</p>
+          <div class="event-address-container-new">
+            <h3 class="event-location-title-new">TẠI TƯ GIA NHÀ GÁI</h3>
+            <p class="event-address-detail-new">Nhà văn hoá thôn Trung Thượng, xã Quảng Sơn, huyện Quảng Trạch, Quảng Bình</p>
+          </div>
+        </div>
+        
+        <!-- Lotus element for decoration -->
+        <div class="lotus-decor"></div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="map-section" id="map-section">
+      <h2 class="section-title fade-up">Địa Điểm Tổ Chức</h2>
+      <p class="section-sub fade-up delay-1">Nhà văn hoá thôn Trung Thượng, Quảng Sơn, Quảng Trạch, Quảng Bình</p>
+      <div class="map-wrapper fade-up delay-2">
+        <iframe title="Bản đồ địa điểm"
+          src="https://maps.google.com/maps?q=Nhà+văn+hoá+thôn+Trung+Thượng,+P9C3%2BJW,+Quảng+Sơn,+Quảng+Trạch,+Quảng+Bình,+Việt+Nam&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+      </div>
+      <a class="map-btn fade-up delay-3" href="https://www.google.com/maps/dir/?api=1&destination=Nhà+văn+hoá+thôn+Trung+Thượng,+P9C3%2BJW,+Quảng+Sơn,+Quảng+Trạch,+Quảng+Bình,+Việt+Nam" target="_blank" rel="noopener">📍 Xem Bản Đồ
+        Lớn</a>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section" id="gallery">
+      <h2 class="section-title fade-up">Khoảnh Khắc Của Chúng Tôi</h2>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item g1 fade-right delay-1"><div class="gallery-overlay"><span>💕</span></div></div>
+        <div class="gallery-item g2 shape-arch fade-up delay-3"><div class="gallery-overlay"><span>🌸</span></div></div>
+        <div class="gallery-item g3 fade-left delay-4"><div class="gallery-overlay"><span>✨</span></div></div>
+        <div class="gallery-item g4 fade-left delay-2"><div class="gallery-overlay"><span>💫</span></div></div>
+        <div class="gallery-item g5 shape-arch zoom-in delay-5"><div class="gallery-overlay"><span>🌹</span></div></div>
+        <div class="gallery-item g6 fade-right delay-6"><div class="gallery-overlay"><span>💍</span></div></div>
+        <div class="gallery-item g7 fade-right delay-3"><div class="gallery-overlay"><span>💕</span></div></div>
+        <div class="gallery-item g8 shape-arch fade-up delay-7"><div class="gallery-overlay"><span>🌸</span></div></div>
+        <div class="gallery-item g9 zoom-in delay-8"><div class="gallery-overlay"><span>✨</span></div></div>
+        <div class="gallery-item g10 fade-left delay-4"><div class="gallery-overlay"><span>💫</span></div></div>
+        <div class="gallery-item g11 shape-arch fade-up delay-6"><div class="gallery-overlay"><span>🌹</span></div></div>
+        <div class="gallery-item g12 fade-left delay-8"><div class="gallery-overlay"><span>💍</span></div></div>
+      </div>
+    </section>
+
+    <!-- HỘP MỪNG CƯỚI -->
+    <section class="gift-section" id="gift-section">
+      <h2 class="section-title fade-up">Hộp Mừng Cưới</h2>
+      <p class="section-sub fade-up delay-1">Nhấn để mở</p>
+      <div class="gift-scene zoom-in delay-2">
+        <div class="coin coin-1">🪙</div>
+        <div class="coin coin-2">🪙</div>
+        <div class="coin coin-3">🪙</div>
+        <div class="coin coin-4">🪙</div>
+        <div class="gift-box" id="gift-box" onclick="openGiftBox()" title="Nhấn để mở hộp mừng cưới">
+          <div class="box-lid">
+            <div class="box-lid-top"></div>
+            <div class="box-lid-side"></div>
+            <div class="box-badge">囍</div>
+          </div>
+          <div class="box-body">
+            <div class="box-corner tl"></div>
+            <div class="box-corner tr"></div>
+            <div class="box-corner bl"></div>
+            <div class="box-corner br"></div>
+          </div>
+          <div class="box-sparkles"></div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-bg"></div>
+      <div class="footer-content">
+        <p class="footer-names">Ngọc Lượng <span class="footer-heart">♥</span> Kiều Trinh</p>
+        <p class="footer-date">22 · 03 · 2026</p>
+        <div class="footer-divider">
+          <span class="line"></span><span>❦</span><span class="line"></span>
+        </div>
+        <p class="footer-quote">"Mãi mãi không phải là khoảng thời gian, mà là cảm giác."</p>
+        <p class="footer-copy">Cảm ơn quý khách đã dành thời gian quý báu đến chung vui cùng gia đình chúng tôi! ❤️</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- MUSIC BUTTON -->
+  <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Bật/Tắt nhạc">
+    🎵
+  </button>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scroll-top" onclick="scrollToTop()" title="Lên đầu trang">↑</button>
+
+  <audio id="bg-music" loop>
+    <source src="./50 Năm Về Sau.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js?v=2"></script>
+</body>
+
+</html>
