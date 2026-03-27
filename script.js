@@ -53,7 +53,7 @@ function initPage() {
    3. COUNTDOWN TIMER
 ======================== */
 function startCountdown() {
-  const weddingDate = new Date('2026-03-29T10:00:00');
+  const weddingDate = new Date('2026-03-29T09:00:00');
 
   function update() {
     const now = new Date();
